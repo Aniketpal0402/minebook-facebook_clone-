@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REGISTER USER</title>
+  <link rel="stylesheet" href="/stylesheets/index.css">
+</head>
+
+<body>
+  <!-- navbar -->
+  <div class="nav">
+    <div class="inner mg">
+      <!-- logo area -->
+      <div class="logo">
+        <img src="https://i.imgur.com/HTTU3R6.png">
+      </div>
+      <!-- login area -->
+      <a href="/newlogin"><button>LOGIN</button></a>
+    </div>
+  </div> <!-- end navigation -->
+  <!-- main page area -->
+  <div class="main mg">
+    <div class="left">
+      <h3>Minebook helps you connect and share with the people in your life.</h3>
+      <img id="cimg" src="https://i.imgur.com/p4acFUi.png">
+    </div>
+    <!-- signup form -->
+    <div class="right">
+      <h1>Sign Up</h1>
+      <p><strong class="strong">Developed By<aj> Aniket pal</aj></strong></p>
+      <form action="/register" method="post">
+        <input type="text" name="firstname" placeholder="First name" required>
+        <input type="text" name="lastname" placeholder="Last name" required>
+        <input type="text" name="phoneno" placeholder="Mobile Number" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="New Password">
+        <label for="dob">DATE OF BIRTH:</label>
+        <input type="date" name="dob">
+        <label><input type="radio" name="gender" value="Female" required>Female</label>
+        <label><input type="radio" name="gender" value="Male" required>Male</label><br>
+        <input type="submit" value="Sign Up">
+      </form>
+
+      <p class="fs_14">By clicking Sign Up, you agree to our <a href="">Terms</a>, <a href="">Data Policy</a> and <a
+          href="">Cookies Policy</a>. You may receive SMS Notifications from us and can opt out any time</p>
+      <hr><br>
+    </div>
+  </div>
+</body>
+
+</html>

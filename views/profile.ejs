@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="/stylesheets/profile.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+  <section class="main-container">
+    <div class="box1 box">
+      <div class="content">
+        <div class="image">
+          <img  src="/images/uploads/<%=user.dp%>" alt="">
+        </div>
+        <div class="imageicon">
+          <i id="icon" class="fa-solid fa-pencil"></i>
+          <form action="/dp" method="post" enctype="multipart/form-data" class="dpform">
+            <input type="file" name="dp" id="dp">
+          </form>
+        </div>
+        <div class="level">
+          <p>PRO</p>
+        </div>
+        <div class="text">
+          <p class="name">
+            <%=user.firstname%>
+              <%=user.lastname%>
+          </p>
+          <p class="job_title">
+            <%=user.email%>
+          </p>
+          <p class="job_discription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam atque, ipsam a amet
+            laboriosam eligendi.</p>
+        </div>
+        <div class="icons">
+          <button>
+            <ion-icon name="logo-dribbble"></ion-icon>
+          </button>
+          <button>
+            <ion-icon name="logo-instagram"></ion-icon>
+          </button>
+          <button>
+            <ion-icon name="logo-twitter"></ion-icon>
+          </button>
+          <button>
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </button>
+          <button>
+            <ion-icon name="logo-facebook"></ion-icon>
+          </button>
+          <button>
+            <ion-icon name="logo-behance"></ion-icon>
+          </button>
+        </div>
+        <div class="button">
+          <div>
+            <button class="message" type="button">Message</button>
+          </div>
+          <div>
+            <a href="/logout"><button class="connect" type="button">logout</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="upload-form">
+      <form action="/uploads" method="post" enctype="multipart/form-data">
+        <input type="text" name="caption" id="caption" placeholder="Enter The Caption Here" required>
+        <input type="file" name="file" id="file" required>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="container2">
+      <% user.posts.forEach(function(post){ %>
+        <div class="card">
+          <div class="img">
+            <img src="/images/uploads/<%= post.image %>" alt="Post Image">
+          </div>
+          <div class="captionss">
+            <h4>
+              <%= post.postText %>
+            </h4>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+  </section>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    document.querySelector("#icon").addEventListener("click",()=>{
+      document.querySelector(".dpform input").click();
+    })
+
+    document.querySelector(".dpform input").addEventListener("change",()=>{
+      document.querySelector(".dpform").submit();
+    })
+  </script>
+</body>
+
+</html>
